@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import InputMask from 'react-input-mask';
+import { Link } from "react-router-dom";
 import { Button, Container, Divider, Form, Icon } from 'semantic-ui-react';
 
 class FormCliente extends React.Component{
@@ -122,10 +123,9 @@ class FormCliente extends React.Component{
 										icon
 										labelPosition='left'
 										color='orange'
-										onClick={this.listar}
-										>
+									>
 										<Icon name='reply' />
-										Voltar
+										<Link to={'/list-cliente'}>Voltar</Link>
 									</Button>
 
 									<Container textAlign='right'>
