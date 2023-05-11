@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import { Button, Container, Divider, Icon, Table } from 'semantic-ui-react';
 import { ENDERECO_API } from '../../views/util/Constantes';
 
-class ListCliente extends React.Component{
+class ListEntregador extends React.Component{
 
     state = {
 
-       listaClientes: []
+       listaEntregadores: []
       
     }
 
@@ -20,11 +20,11 @@ class ListCliente extends React.Component{
 
     carregarLista = () => {
 
-        axios.get(ENDERECO_API + "api/cliente")
+        axios.get(ENDERECO_API + "api/entregador")
         .then((response) => {
           
             this.setState({
-               listaClientes: response.data
+                listaEntregadores: response.data
             })
         })
 
@@ -52,7 +52,7 @@ class ListCliente extends React.Component{
 
                     <Container textAlign='justified' >
 
-                        <h2> Cliente </h2>
+                        <h2> Entregador </h2>
 
                         <Divider />
 
@@ -87,14 +87,14 @@ class ListCliente extends React.Component{
                           
                                 <Table.Body>
 
-                                    { this.state.listaClientes.map(cliente => (
+                                    { this.state.listaEntregadores.map(e => (
 
                                         <Table.Row>
-                                            <Table.Cell>{cliente.nome}</Table.Cell>
-                                            <Table.Cell>{cliente.cpf}</Table.Cell>
-                                            <Table.Cell>{this.formatarData(cliente.dataNascimento)}</Table.Cell>
-                                            <Table.Cell>{cliente.foneCelular}</Table.Cell>
-                                            <Table.Cell>{cliente.foneFixo}</Table.Cell>
+                                            <Table.Cell>{e.nome}</Table.Cell>
+                                            <Table.Cell>{e.cpf}</Table.Cell>
+                                            <Table.Cell>{this.formatarData(e.dataNascimento)}</Table.Cell>
+                                            <Table.Cell>{e.foneCelular}</Table.Cell>
+                                            <Table.Cell>{e.foneFixo}</Table.Cell>
                                             <Table.Cell textAlign='center'>
                                               
                                                 <Button
@@ -125,4 +125,4 @@ class ListCliente extends React.Component{
    }
 }
 
-export default ListCliente;
+export default ListEntregador;

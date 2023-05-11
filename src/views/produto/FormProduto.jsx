@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Container, Divider, Form, Icon } from 'semantic-ui-react';
+import { ENDERECO_API } from '../../views/util/Constantes';
 
 class FormProduto extends React.Component{
 
@@ -27,7 +28,7 @@ class FormProduto extends React.Component{
 			tempoEntregaMaximo: this.state.tempoEntregaMaximo
 		}
 
-		axios.post("http://localhost:8082/api/produto", produtoRequest)
+		axios.post(ENDERECO_API + "api/produto", produtoRequest)
 		.then((response) => {
 			console.log('Produto cadastrado com sucesso.')
 		})

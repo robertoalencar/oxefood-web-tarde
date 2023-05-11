@@ -44,7 +44,7 @@ class MenuSistema extends React.Component{
                        active={this.state.activeItem === 'entregador'}
                        onClick={this.handleItemClick}
                        as={Link}
-                       to='/form-entregador'
+                       to='/list-entregador'
                    />
 
                </Menu>
