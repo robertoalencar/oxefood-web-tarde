@@ -89,7 +89,7 @@ class ListEntregador extends React.Component{
                                 floated='right'
                             >
                                 <Icon name='clipboard outline' />
-                                <Link to={'/form-cliente'}>Novo</Link>
+                                <Link to={'/form-entregador'}>Novo</Link>
                             </Button>
 
                             <br/><br/><br/>
