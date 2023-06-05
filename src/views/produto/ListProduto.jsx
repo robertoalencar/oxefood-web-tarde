@@ -76,7 +76,7 @@ class ListProduto extends React.Component{
 
                                     { this.state.listaProdutos.map(p => (
 
-                                        <Table.Row>
+                                        <Table.Row key={p.id}>
                                             <Table.Cell>{p.codigo}</Table.Cell>
                                             <Table.Cell>{p.titulo}</Table.Cell>
                                             <Table.Cell>{p.descricao}</Table.Cell>
@@ -86,11 +86,15 @@ class ListProduto extends React.Component{
                                             <Table.Cell textAlign='center'>
                                               
                                                 <Button
-                                                   inverted
-                                                   circular
-                                                   icon='edit'
-                                                   color='blue'
-                                                   itle='Clique aqui para editar os dados deste cliente' /> &nbsp;
+                                                    inverted
+                                                    circular
+                                                    color='green'
+                                                    title='Clique aqui para editar os dados deste cliente'
+                                                    icon>
+                                                        <Link to="/form-produto" state={{id: p.id}} style={{color: 'green'}}> <Icon name='edit' /> </Link>
+                                                </Button>
+                                                
+                                                &nbsp;
                                                    
                                                 <Button
                                                    inverted
