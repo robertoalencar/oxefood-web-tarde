@@ -38,9 +38,9 @@ class ListCliente extends React.Component{
             return ''
         }
         
-        let dia = dataParam.substr(8,2);
-        let mes = dataParam.substr(5,2);
-        let ano = dataParam.substr(0,4);
+        let dia = dataParam[2];
+        let mes = dataParam[1];
+        let ano = dataParam[0];
         let dataFormatada = dia + '/' + mes + '/' + ano;
 
         return dataFormatada

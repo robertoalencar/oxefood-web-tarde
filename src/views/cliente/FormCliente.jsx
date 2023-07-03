@@ -4,6 +4,8 @@ import InputMask from 'react-input-mask';
 import { Link, useLocation } from "react-router-dom";
 import { Button, Container, Divider, Form, Icon } from 'semantic-ui-react';
 import { ENDERECO_API } from '../../views/util/Constantes';
+import { mensagemErro, notifyError, notifySuccess } from '../../views/util/Util';
+
 
 export default function FormCliente () {
 
@@ -53,8 +55,16 @@ export default function FormCliente () {
 		} else { //Cadastro:
 			
 			axios.post(ENDERECO_API + "api/cliente", clienteRequest)
-			.then((response) => { console.log('Cliente cadastrado com sucesso.') })
-			.catch((error) => { console.log('Erro ao incluir o cliente.') })
+			.then((response) => { 
+				notifySuccess('Cliente cadastrado com sucesso.')
+			})
+			.catch((error) => { 
+				if (error.response) {
+					notifyError(error.response.data.errors[0].defaultMessage)
+				} else {
+					notifyError(mensagemErro)
+				} 					
+			})
 		}
 	 }
 
@@ -64,9 +74,9 @@ export default function FormCliente () {
             return ''
         }
         
-        let dia = dataParam.substr(8,2);
-        let mes = dataParam.substr(5,2);
-        let ano = dataParam.substr(0,4);
+        let dia = dataParam[2];
+        let mes = dataParam[1];
+        let ano = dataParam[0];
         let dataFormatada = dia + '/' + mes + '/' + ano;
 
         return dataFormatada
