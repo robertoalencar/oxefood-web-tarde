@@ -2,14 +2,11 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { Segment } from 'semantic-ui-react';
 import './App.css';
-import MenuSistema from './MenuSistema';
 import Rotas from './Rotas';
 
 function App() {
   return (
     <div className="App">
-
-      <MenuSistema />
 
       <ToastContainer />
 

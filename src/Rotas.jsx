@@ -9,28 +9,108 @@ import FormComprador from './views/comprador/FormComprador';
 import FormEntregador from './views/entregador/FormEntregador';
 import ListEntregador from './views/entregador/ListEntregador';
 import Home from './views/home/Home';
+import FormLogin from './views/login/FormLogin';
 import FormProduto from './views/produto/FormProduto';
 import ListProduto from './views/produto/ListProduto';
+import { ProtectedRoute } from './views/util/ProtectedRoute';
+
 
 function Rotas() {
     return (
         <>
             <Routes>
-                <Route path="/" element={ <Home/> } />
-                
-                <Route path="list-cliente" element={ <ListCliente/> } />
-                <Route path="form-cliente" element={ <FormCliente/> } />
-                
-                <Route path="form-produto" element={ <FormProduto/> } />
-                <Route path="list-produto" element={ <ListProduto/> } />
+                <Route path="/" element={ <FormLogin/> } />
 
-                <Route path="form-categoria-produto" element={ <FormCategoriaProduto/> } />
-                <Route path="list-categoria-produto" element={ <ListCategoriaProduto/> } />
+                <Route
+                    path="/home"
+                    element={
+                        <ProtectedRoute>
+                            <Home />
+                        </ProtectedRoute>
+                    }
+                />
                 
-                <Route path="form-entregador" element={ <FormEntregador/> } />
-                <Route path="list-entregador" element={ <ListEntregador/> } />
-                
-                <Route path="form-comprador" element={ <FormComprador/> } />
+                <Route
+                    path="/list-cliente"
+                    element={
+                        <ProtectedRoute>
+                            <ListCliente />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/form-cliente"
+                    element={
+                        <ProtectedRoute>
+                            <FormCliente />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/list-produto"
+                    element={
+                        <ProtectedRoute>
+                            <ListProduto />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/form-produto"
+                    element={
+                        <ProtectedRoute>
+                            <FormProduto />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/list-categoria-produto"
+                    element={
+                    <ProtectedRoute>
+                        <ListCategoriaProduto />
+                    </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/form-categoria-produto"
+                    element={
+                    <ProtectedRoute>
+                        <FormCategoriaProduto />
+                    </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/list-entregador"
+                    element={
+                    <ProtectedRoute>
+                        <ListEntregador />
+                    </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/form-entregador"
+                    element={
+                    <ProtectedRoute>
+                        <FormEntregador />
+                    </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/form-comprador"
+                    element={
+                    <ProtectedRoute>
+                        <FormComprador />
+                    </ProtectedRoute>
+                    }
+                />
+
             </Routes>
         </>
     )

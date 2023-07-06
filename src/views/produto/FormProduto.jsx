@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button, Container, Divider, Form, Icon } from 'semantic-ui-react';
+import MenuSistema from '../../MenuSistema';
 import { ENDERECO_API } from '../../views/util/Constantes';
 
 export default function FormProduto () {
@@ -74,6 +75,8 @@ export default function FormProduto () {
 
 	return(
 		<div>
+
+			<MenuSistema />
 
 			<div style={{marginTop: '3%'}}>
 

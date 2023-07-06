@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Container, Divider, Form, Icon, Menu, Segment, Table } from 'semantic-ui-react';
+import MenuSistema from '../../MenuSistema';
 import { ENDERECO_API } from '../../views/util/Constantes';
 
 class ListProduto extends React.Component{
@@ -89,6 +90,8 @@ class ListProduto extends React.Component{
     render(){
         return(
             <div>
+
+                <MenuSistema />
 
                 <div style={{marginTop: '3%'}}>
 

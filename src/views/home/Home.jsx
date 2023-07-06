@@ -1,11 +1,13 @@
 import React from "react";
 import { Container, Grid, Image } from 'semantic-ui-react';
+import MenuSistema from '../../MenuSistema';
 
 class Home extends React.Component{
 
     render(){
         return(
             <div>
+                <MenuSistema/>
                 <div style={{marginTop: '5%'}}>
                     <Container>
                         <Grid columns={2} divided>
