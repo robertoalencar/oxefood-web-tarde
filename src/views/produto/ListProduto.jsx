@@ -109,8 +109,6 @@ export default function ListProduto () {
             formData.append('idCategoria', idCategoriaParam);
         }
  
-        console.log(formData)
-
         await axios.post("http://localhost:8080/api/produto/filtrar", formData)
         .then((response) => {
 
